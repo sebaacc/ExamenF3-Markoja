@@ -1,4 +1,6 @@
 import React from 'react'
+import data from './data.json'
+import Post from './Post'
 // Debemos importar el listado de objetos del archivo JSON para usarlos como array a la hora de crear cada Item.
 // El componente Posteos es el padre de:
 // - Post (multiplicados por lo que haya en el listado JSON)
@@ -9,7 +11,7 @@ import React from 'react'
 export default function Posteos({aumentarLikes}) {
   return (
     <div className='container'>
-      {/* renderizamos los Post aquí */}
+      {data.map(element => <Post key= {element.id} noticia = {element} aumentarLikes={aumentarLikes} /> )}
     </div>
   )
 }
